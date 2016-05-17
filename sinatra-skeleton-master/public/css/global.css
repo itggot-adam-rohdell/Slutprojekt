@@ -1,0 +1,162 @@
+body {
+    padding: 0;
+    margin: 0;
+    background-color: aqua;
+}
+
+.head {
+    width: 100%;
+    height: 200px;
+    background-color: blue;
+    z-index: 10;
+}
+
+.logo {
+    width: 250px;
+    height: 180px;
+}
+
+.log {
+    background-color: white;
+    box-shadow: 0 0 5px black;
+    min-height: 500px;
+    margin-top: 50px;
+    margin-bottom: 25px;
+    margin-left: 25%;
+    margin-right: 25%;
+}
+
+.login {
+    margin-left: 30%;
+    margin-right: 25%;
+    z-index: 10000;
+    width: 250px;
+    font-size: 16px;
+    color: black;
+    font-weight: bolder;
+    font-family: Bitter, serif;
+    border-radius: 0 0 5px 5px;
+    padding: 5px 10px;
+}
+
+.navigationbar {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    overflow: hidden;
+    background-color: #333;
+}
+
+.navigationbar li {
+    display: inline;
+    float: right;
+}
+
+.navigationbar a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+.navigationbar a:hover {
+    background-color: #111;
+}
+
+.loginbord input {
+    width:75px;
+
+}
+.username {
+    width: 100px;
+}
+
+.loggain {
+    margin: 2px;
+
+}
+
+.problem {
+    font-size: 10px;
+
+}
+
+.fgt {
+    padding-top: 10px;
+}
+
+.knapp {
+    height: 21px;
+    width: 50px;
+}
+
+.fgt1 {
+    padding-top: 23px;
+}
+
+.userbox {
+    width: 50px;
+}
+
+
+
+
+.main {
+    background-color: #fff;
+    width: 60%;
+    min-height: 500px;
+    margin-top: 30px;
+    margin-left: 20%;
+    margin-right: 20%;
+    box-shadow: 0 0 5px black;
+    z-index: -10;
+}
+
+.selection {
+
+}
+
+.title {
+    display: inline;
+    font-size: 45px;
+    vertical-align: 75px;
+    color: white;
+    font-weight: bolder;
+}
+
+.ask {
+    background-color: white;
+    box-shadow: 0 0 5px black;
+    min-height: 500px;
+    margin-top: 50px;
+    margin-bottom: 25px;
+    margin-left: 25%;
+    margin-right: 25%;
+}
+
+.ask_table {
+    margin-left: 10%;
+}
+
+.ask_title {
+    font-size: 21px;
+}
+
+.bla {
+    margin-left: 50px;
+}
+
+.ticket_title {
+
+}
+
+
+.error {
+    display: none;
+    color: red;
+}
+
+.error:target {
+    display: inherit;
+}

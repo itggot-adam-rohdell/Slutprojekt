@@ -1,0 +1,34 @@
+<div class="ask">
+  <p class="error" id="missing_field">Vänligen fyll i alla fält.</p>
+  <form action="/ask" method="POST">
+    <table class="ask_table">
+      <tr class="ask_row">
+        <td><p><label for="title"><span class="ask_title">Titel:</span></label></p>
+          <input type="text" name="title" id="title">
+        </td>
+        <td class="ask_category">
+          <p>
+            <label for="category"><span class="ask_title">Kategori:</span></label>
+          </p>
+          <select name="category" id="category">
+            <option>-</option>
+            <% Category.all.each do |cat| %>
+                <option value="<%= cat.id %>"><%= cat.name %></option>
+            <% end %>
+          </select>
+        </td>
+      </tr>
+      <tr>
+        <td class="ask_text">
+          <p><label for="beskrivning"><span class="ask_title">Beskrivning:</span></label>
+          </p>
+          <textarea name="text" id="beskrivning" cols="30" rows="10"></textarea>
+      </tr>
+      <tr>
+        <td class="ask_button"><input type="submit" class="ask_knapp"></td>
+      </tr>
+    </table>
+  </form>
+  
+  
+</div>

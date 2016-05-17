@@ -1,0 +1,7 @@
+<div class="main">
+  <% @tickets.each do |ticket| %>
+    <a href="/<%= @user.id %>/tickets/<%= ticket.id %>">
+           <h1 class="ticket_title"><%= ticket.title %></h1>
+    </a>
+  <% end %>
+</div>
