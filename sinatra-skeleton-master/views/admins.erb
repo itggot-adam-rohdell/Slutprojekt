@@ -1,0 +1,11 @@
+<div class="main">
+
+  <% @admins.each do |admin| %>
+      <a href="/admins/<%= admin.id %>">
+        <h1 class="admin_display"> <%= admin.name %></h1>
+      </a>
+  <% end %>
+
+
+
+</div>

@@ -22,13 +22,17 @@
 
        <ul class="navigationbar">
              <% if @user %>
-                <li><a href="/jag">Spana in dig själv</a></li>
-                <li><a href="/logout">Logga ut</a></li>
+                 <% if @user.admin %>
+                     <li class="admin_nav"><a href="#">Ej hanterade frågor</a></li>
+                     <li class="admin_nav"><a href="/admins">Administratörer</a></li>
+                 <% end %>
+                <li class="user_nav"><a href="/jag">Spana in dig själv</a></li>
+                <li class="user_nav"><a href="/logout">Logga ut</a></li>
              <% else %>
-                <li><a href="/login">Logga in</a></li>
+                <li class="user_nav"><a href="/login">Logga in</a></li>
              <% end %>
-         <li><a href="#">Vanliga frågor</a></li>
-         <li><a href="/ask">Ställ en fråga</a></li>
+         <li class="user_nav"><a href="/questions">Vanliga frågor</a></li>
+         <li class="user_nav"><a href="/ask">Ställ en fråga</a></li>
        </ul>
     </div>
     </header>

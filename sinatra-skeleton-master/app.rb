@@ -11,7 +11,6 @@ class App < Sinatra::Base
     erb :login
   end
 
-
   before do
    if request.path_info == '/' || request.path_info == '/login'
      if session[:redirecterino] && request.path_info != '/login'
@@ -41,15 +40,27 @@ class App < Sinatra::Base
     erb :ask
   end
 
+  get '/admins' do
+    @admins = User.all(:admin => true)
+    erb :admins
+  end
+
+  get "/admins/:user_id" do
+    @admins = User.all(:admin => true)
+    erb :admin_id
+  end
+
   post '/login' do
     user = User.first( :name => params[:username])
     if user
       if user.password == params[:password]
         session[:user_id] = user.id
         redirect "/"
+      else
+        redirect "/login#invalid_login"
       end
     else
-      "shieet"
+      redirect "/login#invalid_login"
     end
   end
 
@@ -66,6 +77,14 @@ class App < Sinatra::Base
     end
   end
 
+  get '/logout' do
+    session.destroy
+    redirect '/'
+  end
+
+  get '/questions' do
+    @questions = Question.all
+  end
 
   get "/:user_id/tickets/?" do |user_id|
     @user = User.first(id: session[:user_id])
@@ -78,5 +97,7 @@ class App < Sinatra::Base
     @ticket = Ticket.first(:id => params[:ticket_id])
     erb :ticket_user
   end
+
+
 
 end

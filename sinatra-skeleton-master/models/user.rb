@@ -12,5 +12,5 @@ class User
 
   has n, :infos
   has n, :tickets
-
+  has n, :answers
 end

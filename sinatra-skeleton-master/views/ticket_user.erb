@@ -1,5 +1,12 @@
 <div class="main">
     <h1><%= @ticket.title %></h1>
     <p><%= @ticket.text %></p>
-    <p>Category: <%= @ticket.category %></p>
+    <p><span class="k">Kategori:</span> <%= @ticket.category.name %></p>
+
+    <p><a href="/<%= @user.id %>/tickets/"><button>tillbaka</button></a></p>
+    <% if @user.admin %>
+      <form action="/answer" method="POST">
+        <textarea name="answer" id="svar" cols="30" rows="7"></textarea>
+      </form>
+    <% end %>
 </div>

@@ -47,10 +47,16 @@ body {
     background-color: #333;
 }
 
-.navigationbar li {
+.user_nav {
     display: inline;
     float: right;
 }
+
+.admin_nav {
+    display: inline;
+    float: left;
+}
+
 
 .navigationbar a {
     display: block;
@@ -159,4 +165,10 @@ body {
 
 .error:target {
     display: inherit;
+}
+
+.k {
+    display: inline;
+    font-weight: bold;
+    padding-top: 10px;
 }
