@@ -1,0 +1,23 @@
+<div class="main">
+  <table>
+    <tr>
+      <td> <h1><%= @target_user.name %>:</h1>
+
+        <% @tickets.each do |ticket| %>
+            <a href="/<%= params[:user_id] %>/tickets/<%= ticket.id %>"><p><%= ticket.title  %></p></a>
+        <% end %></td>
+    </tr>
+    <tr>
+      <td>
+        <%unless @target_user.admin? %>
+            <a href="/admin/enlight/<%= @target_user.id %>"><button>Make non-pleb</button></a>
+        <% end %>
+      </td>
+    </tr>
+  </table>
+
+
+
+
+
+</div>

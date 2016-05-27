@@ -6,11 +6,26 @@ class User
   property :password, String, :required => true
   property :mail, String
   property :last_login, DateTime
-  property :admin, Boolean
   property :session_id, String
+  property :type, Discriminator
 
 
+  def admin?
+    self.is_a? AdminUser
+  end
+
+
+end
+
+class AdminUser < User
   has n, :infos
   has n, :tickets
-  has n, :answers
+
 end
+
+class WebbUser < User
+  has n, :tickets
+
+end
+
+

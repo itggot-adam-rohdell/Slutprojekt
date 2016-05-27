@@ -116,7 +116,7 @@ body {
     margin-left: 20%;
     margin-right: 20%;
     box-shadow: 0 0 5px black;
-    z-index: -10;
+    padding: 10px;
 }
 
 .selection {
@@ -171,4 +171,30 @@ body {
     display: inline;
     font-weight: bold;
     padding-top: 10px;
+}
+
+.admin_panel {
+    background-color: #fff;
+    width: 60%;
+    min-height: 500px;
+    margin-top: 30px;
+    margin-left: 20%;
+    margin-right: 20%;
+    box-shadow: 0 0 5px black;
+    z-index: -10;
+    padding: 10px;
+
+}
+
+.admin_panel > a{
+    text-decoration: none;
+    color: magenta;
+    font-weight: bold;
+
+}
+
+.admins {
+    text-decoration: none;
+    color: chartreuse;
+    font-weight: bold;
 }

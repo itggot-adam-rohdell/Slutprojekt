@@ -1,7 +1,8 @@
 <div class="main">
+  <h1>Tickets:</h1>
   <% @tickets.each do |ticket| %>
-    <a href="/<%= @user.id %>/tickets/<%= ticket.id %>">
-           <h1 class="ticket_title"><%= ticket.title %></h1>
+    <a href="/<%= params[:user_id] %>/tickets/<%= ticket.id %>">
+           <h3 class="ticket_title"><%= ticket.title %></h3>
     </a>
   <% end %>
 </div>

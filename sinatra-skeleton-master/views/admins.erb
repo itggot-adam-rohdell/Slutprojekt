@@ -1,8 +1,8 @@
 <div class="main">
-
+  <h1>Administratörer:</h1>
   <% @admins.each do |admin| %>
-      <a href="/admins/<%= admin.id %>">
-        <h1 class="admin_display"> <%= admin.name %></h1>
+      <a href="/admin/admins/<%= admin.id %>" class="admins">
+        <h3 class="admin_display">- <%= admin.name %></h3>
       </a>
   <% end %>
 

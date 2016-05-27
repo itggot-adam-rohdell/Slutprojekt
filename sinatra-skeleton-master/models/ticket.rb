@@ -8,5 +8,6 @@ class Ticket
 
   has n, :tfiles
   belongs_to :category
-  belongs_to :user
+  belongs_to :webb_user
+  belongs_to :admin_user, required: false
 end

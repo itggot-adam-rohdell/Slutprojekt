@@ -14,8 +14,8 @@ class Seeder
   end
 
   def self.make_user!
-    User.create :name => 'jocke', :password => 'kappa123', :mail => 'kappa@gmail.com', :last_login => Time.now, :admin => true
-    User.create :name => 'yusif', :password => 'keepo', :mail => 'kappa@gmail.com', :last_login => Time.now, :admin => false
+    AdminUser.create :name => 'jocke', :password => 'kappa123', :mail => 'kappa@gmail.com', :last_login => Time.now
+    WebbUser.create :name => 'yusif', :password => 'keepo', :mail => 'kappa@gmail.com', :last_login => Time.now
   end
 
 end

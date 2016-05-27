@@ -1,0 +1,7 @@
+<div class="main">
+  <h2>Användare:</h2>
+  <% @users.each do |user| %>
+      <a href="/admin/<%= user.id %>/<%= user.name %>"><p><%= user.name %></p></a>
+  <% end %>
+
+</div>

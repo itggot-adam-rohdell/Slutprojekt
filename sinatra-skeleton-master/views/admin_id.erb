@@ -1,4 +1,17 @@
 <div class="main">
-    // samma som i admins, fixa så att ID stämmer
+  <table>
+    <tr>
+      <td> <h1><%= @admin.name %></h1></td>
+    </tr>
+    <tr>
+      <td>
+        <% unless @admin.id == @user.id %>
+          <a href="/admin/purge/<%= @admin.id %>"><button>Ta bort fgt</button></a>
+        <% end %>
+      </td>
+    </tr>
+  </table>
+
+
 
 </div>

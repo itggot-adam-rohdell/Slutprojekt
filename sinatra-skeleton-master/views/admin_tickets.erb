@@ -1,0 +1,57 @@
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+<div class="main">
+  <% if @admin_tickets.length > 0 %>
+    <h1 id="title">Ej tilldelade tickets:</h1>
+      <% else %>
+
+      <h1 id="title">Inga otilldelade ärenden</h1>
+      <% end %>
+
+  <table>
+    <% @admin_tickets.each do |ticket| %>
+        <tr>
+          <td>
+            <h4><%= ticket.webb_user.name %> - <%= ticket.title %></h4>
+          </td>
+          <td>
+            <select name="admin" class="admin-select">
+              <option>-</option>
+              <% AdminUser.all.each do |admin| %>
+                  <option value="<%= admin.id %>_<%= ticket.id %>"><%= admin.name %></option>
+              <% end %>
+            </select>
+          </td>
+        </tr>
+    <% end %>
+
+  </table>
+
+  <script type="text/javascript" charset="utf-8">
+    $('.admin-select').click(function(e) {
+      if (this.value.indexOf('_') > -1) {
+        var split = this.value.split('_');
+        $.ajax('/admin/unsolved/tickets/assigned', {
+          method: 'post',
+          data: {
+            admin_user_id: split[0],
+            ticket_id:     split[1]
+          }
+        }).done(function(d) {
+          if (d == 'ok') {
+            var p = $(e.target).parent().parent();
+            if (p.parent().children().length <= 1) {
+              $('#title').text('Inga otilldelade ärenden');
+            }
+            p.remove();
+          } else {
+            // did not workerino
+            alert('Något gick fel, testa att ladda om sidan.');
+          }
+        });
+      } else {
+        // invalid
+      }
+    });
+  </script>
+
+</div>
