@@ -3,7 +3,7 @@ class Question
 
   property :id, Serial
   property :title, String
-  property :text, Text
+  property :answer, Text
 
   has n, :qfiles
   belongs_to :category

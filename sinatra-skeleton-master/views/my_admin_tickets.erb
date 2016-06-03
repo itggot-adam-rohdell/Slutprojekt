@@ -1,4 +1,6 @@
 <div class="main">
 
-  
+    <% @tickets.each do |ticket| %>
+      <a href="/<%= ticket.webb_user.id %>/tickets/<%= ticket.id %>/?"><h4><%= ticket.title %> - <%= ticket.webb_user.name %></h4></a>
+    <% end %>
 </div>

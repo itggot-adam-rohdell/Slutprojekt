@@ -2,6 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <link href='https://fonts.googleapis.com/css?family=Bitter:400,700' rel='stylesheet' type='text/css'>
   <link rel="stylesheet" href="/css/global.css">
   <title>Document</title>
@@ -18,6 +19,7 @@
         </g>
       </svg>
         </a>
+
        <p class="title">IT-Gymnasiet Göteborg</p>
 
        <ul class="navigationbar">
@@ -25,6 +27,7 @@
                  <% if @user.admin? %>
                      <li class="admin_nav"><a href="/admin/unsolved/tickets">Ej hanterade frågor</a></li>
                      <li class="user_nav"><a href="/admin/admin_panel">Admin panel</a></li>
+                     <li class="admin_nav"><a href="/admin/my_tickets">Mina Admin-frågor</a></li>
                  <% else %>
                   <li class="user_nav"><a href="/<%= @user.id %>/tickets">Mina frågor</a></li>
                   <li class="user_nav"><a href="/ask">Ställ en fråga</a></li>
@@ -33,7 +36,7 @@
              <% else %>
                 <li class="user_nav"><a href="/login">Logga in</a></li>
              <% end %>
-         <li class="user_nav"><a href="/questions">Vanliga frågor</a></li>
+         <li class="user_nav"><a href="/faq">Vanliga frågor</a></li>
 
        </ul>
     </div>

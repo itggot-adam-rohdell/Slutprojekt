@@ -13,7 +13,7 @@ class App < Sinatra::Base
 
   before do
     @user = User.first(id: session[:user_id])
-   if request.path_info == '/' || request.path_info == '/login'
+   if request.path_info == '/' || request.path_info == '/login' || request.path_info == '/favicon.ico'
      if session[:redirecterino] && request.path_info != '/login'
        href = session[:redirecterino]
        p "href is #{href} and keepo is #{session[:redirecterino]}"
@@ -74,8 +74,9 @@ class App < Sinatra::Base
     redirect '/'
   end
 
-  get '/questions' do
+  get '/faq' do
     @questions = Question.all
+    erb :questions
   end
 
   get "/:user_id/tickets/?" do |user_id|
@@ -138,19 +139,6 @@ class App < Sinatra::Base
     erb :admins
   end
 
-  #get '/admin/purge/:user_id' do
-   # @target_user = User.first(:id => params[:user_id])
-    #@admin = User.first(:id => params[:user_id])
-    #@target_user.update(:admin => false)
-    #redirect '/admin/admins'
-  #end
-
-  #get '/admin/enlight/:user_id' do
-   # @target_user = User.first(:id => params[:user_id])
-    #@target_user.update(:admin => true)
-   # redirect "/admin/#{@target_user.id}/#{@target_user.name}"
-  #end
-
   get '/admin/admin_panel' do
     erb :admin_panel
   end
@@ -173,9 +161,25 @@ class App < Sinatra::Base
     erb :target_user
   end
 
-  # 2. Gör ej hanterade frågor ??
-  # 3. Pray to da yusif to helpings with att flytta över till nytt konto
-  # 4. Gör vanliga frågor
+  get '/admin/faq' do
+    erb :make_faq
+  end
 
+  post '/admin/make_faq' do
+    cat = Category.first(:id => params[:category])
+    if params[:title].length > 0 && params[:answer].length > 0 && cat
+      faq = Question.create :title => params[:title], :answer => params[:answer], :category => cat
+      faq.save
+      redirect '/faq'
+    else
+      redirect "/faq#missing_field"
+    end
+  end
+
+  before '/tetris.png' do
+    unless @user.admin?
+      redirect '/'
+    end
+  end
 
 end

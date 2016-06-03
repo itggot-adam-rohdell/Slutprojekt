@@ -105,8 +105,131 @@ body {
     width: 50px;
 }
 
+.title {
+    display: inline;
+    font-size: 45px;
+    vertical-align: 75px;
+    color: white;
+    font-weight: bolder;
+}
 
+@media (max-width: 790px) {
+    p.title {
+        font-size: 30px;
 
+    }
+    div.main {
+        margin-left: 15%;
+        margin-right: 15%;
+        width: 70%;
+    }
+    div.ask {
+        margin-left: 15%;
+        margin-right: 15%;
+    }
+    div.login {
+        margin-left: 10%;
+    }
+}
+
+@media (max-width: 625px) {
+    p.title {
+        display: none;
+    }
+    div.main {
+        margin-left: 10%;
+        margin-right: 10%;
+        width: 80%;
+    }
+    div.log {
+        margin-left: 10%;
+        margin-right: 10%;
+    }
+    div.ask {
+        margin-left: 10%;
+        margin-right: 10%;
+    }
+    table.ask_table{
+        margin-left: 5%;
+    }
+    div.ask_text {
+        margin-left: 5%;
+        padding: 0;
+    }
+    div.ask_button {
+        margin-left: 5%;
+    }
+}
+
+@media (max-width: 440px) {
+    li.user_nav {
+        font-size: 12px;
+    }
+}
+
+@media (max-width: 370px) {
+    div.main {
+        margin-left: 5%;
+        margin-right: 5%;
+        margin-top: 27px;
+        width: 90%;
+        padding: 0;
+    }
+
+    div.log {
+        margin-left: 5%;
+        margin-right: 5%;
+        margin-top: 40px;
+    }
+
+    div.login {
+        margin-left: 10%;
+    }
+
+    div.ask {
+        margin-top: 40px;
+        margin-left: 5%;
+        margin-right: 5%;
+    }
+
+    table.ask_table {
+        margin-left: 5%;
+    }
+
+    tr.ask_row td {
+        width: 150px;
+    }
+
+    tr.ask_row p {
+        width: 100px;
+        margin-right: 0;
+    }
+
+    tr.ask_row span {
+        font-size: 15px;
+    }
+
+    tr.ask_row input{
+        width: 100px;
+    }
+
+    td.ask_category select {
+        width: 100px;
+    }
+
+    td.ask_text span {
+        font-size: 15px;
+    }
+
+    li.user_nav a {
+        font-size: 10px;
+    }
+
+    div.ask_text span {
+        font-size: 15px;
+    }
+
+}
 
 .main {
     background-color: #fff;
@@ -123,13 +246,6 @@ body {
 
 }
 
-.title {
-    display: inline;
-    font-size: 45px;
-    vertical-align: 75px;
-    color: white;
-    font-weight: bolder;
-}
 
 .ask {
     background-color: white;
@@ -149,13 +265,19 @@ body {
     font-size: 21px;
 }
 
+.ask_text {
+    padding-left: 10%;
+}
+
+.ask_button {
+    margin-left: 10%;
+    margin-top: 5%;
+}
+
 .bla {
     margin-left: 50px;
 }
 
-.ticket_title {
-
-}
 
 
 .error {

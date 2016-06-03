@@ -1,0 +1,11 @@
+<div class="main">
+  <h1>FAQ:</h1>
+    <% i = 1 %>
+    <% @questions.each do |question| %>
+      <h3><%= "#{i}:" %>&nbsp;<%= question.title %> &nbsp; &nbsp; &nbsp; Kategori:  <%= question.category.name %></h3>
+      <p><%= question.answer %></p>
+      <br>
+      <% i += 1 %>
+    <% end %>
+
+</div>
